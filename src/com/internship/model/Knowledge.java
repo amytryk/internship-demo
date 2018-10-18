@@ -27,9 +27,6 @@ public class Knowledge {
 
     @Override
     public String toString() {
-        return "Knowledge{" +
-                "id=" + id +
-                ", level=" + level +
-                '}';
+        return " knowledge level: " + level;
     }
 }

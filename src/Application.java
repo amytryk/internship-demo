@@ -1,15 +1,23 @@
 import com.internship.dao.StudentDao;
+import com.internship.dao.UniversityDao;
 import com.internship.dao.impl.StudentDaoImpl;
+import com.internship.dao.impl.UniversityDaoImpl;
 import com.internship.model.Knowledge;
 import com.internship.model.Student;
+import com.internship.model.University;
 import com.internship.service.StudentService;
+import com.internship.service.UniversityService;
 import com.internship.service.impl.StudentServiceImpl;
+import com.internship.service.impl.UniversityServiceImpl;
 
 public class Application {
     public static void main(String[] args) {
 
         StudentDao studentDao = new StudentDaoImpl();
         StudentService studentService = new StudentServiceImpl(studentDao);
+
+        UniversityDao universityDao = new UniversityDaoImpl();
+        UniversityService universityService = new UniversityServiceImpl(universityDao);
 
         Knowledge knowledge1 = new Knowledge(1, 45);
         Knowledge knowledge2 = new Knowledge(2, 65);
@@ -37,6 +45,22 @@ public class Application {
         studentService.add(student6);
         studentService.add(student7);
         studentService.add(student8);
+
+        University university = new University(1, "CSE");
+        University university1 = new University(2, "Oxford");
+
+        universityService.add(university);
+        universityService.add(university1);
+
+        universityService.addStudent(1, student1);
+        universityService.addStudent(1, student2);
+        universityService.addStudent(1, student3);
+        universityService.addStudent(1, student4);
+        universityService.addStudent(2, student5);
+        universityService.addStudent(2, student6);
+        universityService.addStudent(2, student7);
+        universityService.addStudent(2, student8);
+
 
     }
 }

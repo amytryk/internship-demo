@@ -34,7 +34,18 @@ public class University {
     }
 
     public void setStudents(List<Student> students) {
-        this.students = students;
+
+        if (students != null) {
+            this.students = students;
+        }
+    }
+
+    public void addStudent(Student student) {
+        students.add(student);
+    }
+
+    public void addAllStudents(List<Student> students) {
+        this.students.addAll(students);
     }
 
     @Override
