@@ -11,7 +11,7 @@ public class UniversityDaoImpl implements UniversityDao {
     Map<Integer, University> universityMap = new HashMap<>();
 
     @Override
-    public University search(Integer id) {
+    public University searchById(Integer id) {
         return universityMap.get(id);
     }
 
