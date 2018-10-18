@@ -1,6 +1,4 @@
-package person;
-
-import person.consciousness.Knowledge;
+package com.internship.model;
 
 public class Student {
     public Student(String name) {

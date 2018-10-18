@@ -1,6 +1,4 @@
-package institution.interlink;
-
-import person.Student;
+package com.internship.model;
 
 public class Internship {
     public Internship(String name) {

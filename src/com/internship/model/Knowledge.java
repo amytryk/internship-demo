@@ -1,4 +1,4 @@
-package person.consciousness;
+package com.internship.model;
 
 public class Knowledge {
     public Knowledge(int level) {

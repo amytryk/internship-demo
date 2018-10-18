@@ -1,6 +1,4 @@
-package institution;
-
-import person.Student;
+package com.internship.model;
 
 public class University {
     public University(String name) {
