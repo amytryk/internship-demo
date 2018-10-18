@@ -4,6 +4,8 @@ import com.internship.dao.StudentDao;
 import com.internship.model.Student;
 import com.internship.service.StudentService;
 
+import java.util.List;
+
 public class StudentServiceImpl implements StudentService {
 
     private StudentDao studentDao;
@@ -20,5 +22,10 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public Student add(Student student) {
         return studentDao.save(student);
+    }
+
+    @Override
+    public List<Student> getStudents() {
+        return studentDao.getAllStudents();
     }
 }
