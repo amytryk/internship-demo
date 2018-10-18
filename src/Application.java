@@ -1,14 +1,21 @@
+import com.internship.dao.InternshipDao;
 import com.internship.dao.StudentDao;
 import com.internship.dao.UniversityDao;
+import com.internship.dao.impl.InternshipDaoImpl;
 import com.internship.dao.impl.StudentDaoImpl;
 import com.internship.dao.impl.UniversityDaoImpl;
+import com.internship.model.Internship;
 import com.internship.model.Knowledge;
 import com.internship.model.Student;
 import com.internship.model.University;
+import com.internship.service.InternshipService;
 import com.internship.service.StudentService;
 import com.internship.service.UniversityService;
+import com.internship.service.impl.InternshipServiceImpl;
 import com.internship.service.impl.StudentServiceImpl;
 import com.internship.service.impl.UniversityServiceImpl;
+
+import java.util.List;
 
 public class Application {
     public static void main(String[] args) {
@@ -18,6 +25,9 @@ public class Application {
 
         UniversityDao universityDao = new UniversityDaoImpl();
         UniversityService universityService = new UniversityServiceImpl(universityDao);
+
+        InternshipDao internshipDao = new InternshipDaoImpl();
+        InternshipService internshipService = new InternshipServiceImpl(internshipDao);
 
         Knowledge knowledge1 = new Knowledge(1, 45);
         Knowledge knowledge2 = new Knowledge(2, 65);
@@ -60,6 +70,18 @@ public class Application {
         universityService.addStudent(2, student6);
         universityService.addStudent(2, student7);
         universityService.addStudent(2, student8);
+
+        List<Student> studentsByKnowledgeCSE = universityService.getStudentsByKnowledge(1, 50);
+        List<Student> studentsByKnowledgeOxford = universityService.getStudentsByKnowledge(2, 50);
+
+        Internship internship = new Internship(1, "Interlink");
+
+        internshipService.add(internship);
+
+        internshipService.addStudents(1, studentsByKnowledgeCSE);
+        internshipService.addStudents(1, studentsByKnowledgeOxford);
+
+        System.out.println(internshipService.getAllStudents(1));
 
 
     }

@@ -1,11 +1,12 @@
 package com.internship.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Internship {
     private int id;
     private String name;
-    private List<Student> students;
+    private List<Student> students = new ArrayList<>();
 
     public Internship(int id, String name) {
         this.id = id;

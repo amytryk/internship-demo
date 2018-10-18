@@ -12,4 +12,6 @@ public interface InternshipService {
     Internship add(Internship internship);
 
     void addStudents(Integer internshipId, List<Student> students);
+
+    List<Student> getAllStudents(Integer internshipId);
 }

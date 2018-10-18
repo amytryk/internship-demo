@@ -30,4 +30,10 @@ public class InternshipServiceImpl implements InternshipService {
         Internship internship = internshipDao.searchById(internshipId);
         internship.addStudentsByKnowledge(students);
     }
+
+    @Override
+    public List<Student> getAllStudents(Integer internshipId) {
+        Internship internship = internshipDao.searchById(internshipId);
+        return internship.getStudents();
+    }
 }
