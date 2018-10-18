@@ -33,7 +33,14 @@ public class Internship {
     }
 
     public void setStudents(List<Student> students) {
-        this.students = students;
+
+        if (students != null) {
+            this.students = students;
+        }
+    }
+
+    public void addStudentsByKnowledge(List<Student> students) {
+        this.students.addAll(students);
     }
 
     @Override
