@@ -12,4 +12,5 @@ public interface StudentDao {
     void remove(Integer id);
 
     List<Student> getAllStudents();
+
 }

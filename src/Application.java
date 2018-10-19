@@ -18,6 +18,12 @@ import com.internship.service.impl.UniversityServiceImpl;
 import java.util.List;
 
 public class Application {
+
+    public static void display(List<Student> students) {
+        System.out.format("%-5s%-25s%-11s\n", "Id", "Name", "Knowledge");
+        students.forEach(student -> System.out.format("%-5d%-25s%-11d\n", student.getId(), student.getName(), student.getKnowledge().getLevel()));
+    }
+
     public static void main(String[] args) {
 
         StudentDao studentDao = new StudentDaoImpl();
@@ -81,7 +87,7 @@ public class Application {
         internshipService.addStudents(1, studentsByKnowledgeCSE);
         internshipService.addStudents(1, studentsByKnowledgeOxford);
 
-        System.out.println(internshipService.getAllStudents(1));
+        display(internshipService.getAllStudents(1));
 
 
     }

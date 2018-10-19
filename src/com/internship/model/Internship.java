@@ -46,10 +46,8 @@ public class Internship {
 
     @Override
     public String toString() {
-        return "Internship{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", students=" + students +
-                '}';
+        return "Internship id " + id +
+                "; name " + name +
+                ": students " + students ;
     }
 }

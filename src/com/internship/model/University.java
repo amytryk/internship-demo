@@ -50,10 +50,7 @@ public class University {
 
     @Override
     public String toString() {
-        return "University{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", students=" + students +
-                '}';
+        return "University id " + id +
+                "; name " + name;
     }
 }
